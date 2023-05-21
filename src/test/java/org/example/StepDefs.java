@@ -4,8 +4,10 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.By;
+import org.testng.Assert;
 
-public class StepDefs {
+public class StepDefs extends Utils {
     HomePage homePage = new HomePage();
     RegisterPage registerPage = new RegisterPage();
     RegisterResultPage registerResultPage = new RegisterResultPage();
@@ -60,5 +62,28 @@ public class StepDefs {
         homePage.clickOnProduct();
         appleMacBookPro13inchProductDetailPage.productDetailPage();
 
+    }
+
+    @Given("I am on Nopcommerece homepage")
+    public void iAmOnNopcommereceHomepage() {
+        driver.get("https://demo.nopcommerce.com/");
+
+    }
+
+    @When("I click on {string}button")
+    public void iClickOnButton(String button_name ) {
+        clickOnElement(By.xpath("//a[text()= '"+button_name+" ']"));
+    }
+
+    @Then("I should be verify that I am on related {string}")
+    public void iShouldBeVerifyThatIAmOnRelated(String page_url) {
+        Assert.assertEquals(driver.getCurrentUrl(),page_url);
+       // Assert.assertEquals(getTextFromElement("h1"),);
+
+    }
+
+    @And("I should verify that my {string}")
+    public void iShouldVerifyThatMy(String page_title ) {
+        Assert.assertEquals(getTextFromElement(By.tagName("h1")),page_title);
     }
 }

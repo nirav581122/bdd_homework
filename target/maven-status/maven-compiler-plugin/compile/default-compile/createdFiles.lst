@@ -1,0 +1,12 @@
+org\example\EmailAFriendPage.class
+org\example\LogIn.class
+org\example\RegisterPage.class
+org\example\RegisterResultPage.class
+org\example\AppleMacBookPro13inchProductDetailPage.class
+org\example\BasePage.class
+org\example\EmailAFriendResultPage.class
+org\example\Utils.class
+org\example\HomePage.class
+org\example\Prac.class
+org\example\DriverManger.class
+org\example\LoadProp.class

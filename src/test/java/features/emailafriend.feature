@@ -9,4 +9,3 @@ Feature:Email a Friend
     And Click on Apple MacBook Pro inch
     And Click on email a friend button
     Then I should Be able to send Email A Friend
-
